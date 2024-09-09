@@ -1,4 +1,4 @@
-# OpenCV-with-Flask
+# Face and eye detection pp with flask
 
 # Live Stream App
 
