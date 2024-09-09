@@ -31,7 +31,7 @@ Before running the project, you will need:
 1. Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
+    git clone https://github.com/mtptisid/Face_detection_with_OpenCV.git
     cd your-repo-name
     ```
 
