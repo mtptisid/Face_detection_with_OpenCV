@@ -1,59 +1,93 @@
-# Face and eye detection pp with flask
+# Flask Face Recognition App
 
-# Live Stream App
+This is a Flask web application that streams video from a webcam and detects faces and eyes in real-time using OpenCV. Users can capture and save images from the video feed, and the saved images are displayed in a gallery with the option to delete them.
 
-![sscv](https://github.com/user-attachments/assets/aefc8737-b7ea-4405-824c-0e65b39f2927)
+## Features
 
-<img width="1440" alt="Screenshot 2024-09-08 at 7 08 52 PM" src="https://github.com/user-attachments/assets/461bc869-180b-4427-a919-52acc700ab68">
+- **Live Video Streaming**: Streams real-time video from the webcam.
+- **Face and Eye Detection**: Uses Haar Cascade Classifiers to detect faces and eyes.
+- **Capture Images**: Allows users to capture frames from the live feed and store them.
+- **Image Gallery**: Displays captured images with the option to delete them.
+- **Responsive Design**: Styled using Bootstrap for a clean and responsive user interface.
 
+## Technologies Used
 
-## 🚀 Overview
+- **Flask**: Python web framework.
+- **OpenCV**: Library for computer vision.
+- **HTML/CSS**: Frontend design.
+- **Bootstrap**: For responsive design.
 
-The Live Stream App is a Flask-based web application that provides real-time video streaming from a webcam, allows capturing images, recording videos, and managing these media files through a gallery interface. The app uses OpenCV for handling video and image processing.
+## Prerequisites
 
-## 📸 Features
-
-- **Real-Time Webcam Streaming**: Live feed from the webcam displayed on the webpage.
-- **Image Capture**: Capture and save images as PNG files.
-- **Video Recording**: Record videos and save them as MP4 files.
-- **Gallery Management**: View, preview, and delete captured images and videos.
-- **Responsive Layout**: A modern, responsive interface using Bootstrap.
-
-## ⚙️ Installation
-
-### Prerequisites
+Before running the project, you will need:
 
 - Python 3.x
+- OpenCV (`cv2`)
 - Flask
-- OpenCV
-- Bootstrap (included via CDN)
+- Bootstrap (linked via CDN in the HTML)
 
-### Setup
+## Installation
 
-1. **Clone the Repository**
-
-   ```bash
-   git clone https://github.com/yourusername/live-stream-app.git
-   cd live-stream-app
-   ```
-
-2. **Create and Activate a Virtual Environment**
+1. Clone the repository to your local machine:
 
     ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    git clone https://github.com/your-username/your-repo-name.git
+    cd your-repo-name
     ```
 
-3. **Install Dependencies**
+2. Create a virtual environment and activate it:
+
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate  # For Linux/Mac
+    # OR
+    venv\Scripts\activate  # For Windows
     ```
+
+3. Install the required dependencies:
+
+    ```bash
     pip install -r requirements.txt
     ```
-4. **Run the Flask App**
-    ```
-    flask run
-    ```
- - The app will be available at http://127.0.0.1:5000.
 
+4. Install OpenCV if it’s not in the requirements file:
+
+    ```bash
+    pip install opencv-python
+    ```
+
+5. Create the necessary directories for storing images:
+
+    ```bash
+    mkdir -p static/images
+    ```
+
+## Running the Application
+
+1. To start the Flask app, run:
+
+    ```bash
+    python app.py
+    ```
+
+2. Open your browser and navigate to:
+
+    ```
+    http://127.0.0.1:5000/
+    ```
+
+## Project Structure
+
+```bash
+.
+├── app.py                  # Main Flask application
+├── requirements.txt        # Python dependencies
+├── static/
+│   └── images/             # Directory for captured images
+├── templates/
+│   └── index.html          # HTML template for the app
+└── README.md               # This documentation file
+```
 
 ## 🎥 Usage
 
@@ -71,35 +105,32 @@ The Live Stream App is a Flask-based web application that provides real-time vid
 
 ## 🖼️ Screenshots
 
-### **Live Feed and Controls.**
-
-<div style="display: flex; justify-content: space-between;">
-  <img src="https://github.com/user-attachments/assets/31eb4029-30f4-4181-8720-337b4c66b1a9" alt="Image 1" style="width: 48%;"/>
-  <img src="https://github.com/user-attachments/assets/2da671fd-03cc-4635-b447-7b7b5c24a49b" alt="Image 2" style="width: 48%;"/>
-</div>
 
 
+## Face and Eye Detection
 
-### **Gallery View.**
+The application uses Haar Cascade Classifiers to detect faces and eyes in real-time. You can download the necessary XML files from the OpenCV GitHub repository.
 
-<div style="display: flex; justify-content: space-between;">
-  <img src="https://github.com/user-attachments/assets/2b4fb4a2-7674-4a90-bb9e-d615a34340d2" alt="Image 1" style="width: 48%;"/>
-  <img src="https://github.com/user-attachments/assets/f9088bcf-db54-4c4c-8b46-1c4447cd3e2c" alt="Image 2" style="width: 48%;"/>
-</div>
-  
+- `haarcascade_frontalface_default.xml`
+- `haarcascade_eye.xml`
 
-## 🔧 Troubleshooting
+Make sure these XML files are placed in the `Haarcascades` folder in the project directory.
 
-- **Camera Feed Not Displaying**: Ensure your webcam is properly connected and accessible by other applications.
-- **Videos Not Playing**: Make sure the video files are encoded correctly and try opening them with standard video players like VLC.
-- **Leaked Resources Warning**: Check that the camera and video writer are being properly released in the code.
+## Usage
 
-## 📄 License
+- **Live Video Stream**: View real-time video from your webcam.
+- **Capture Image**: Click the “Capture Image” button to take a snapshot of the live stream.
+- **Image Gallery**: Captured images appear on the right side in the gallery. Hover over images to view or delete them.
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## Gallery
 
-## 📫 Contact
+Captured images are stored in the `static/images/` directory and displayed in the gallery section on the web page. The gallery is interactive and allows users to delete images.
 
-For any questions or feedback, please contact [Siddharamayya M](https://github.com/mtptisid/).
+## Troubleshooting
 
-Feel free to contribute to this project or suggest improvements by opening an issue or a pull request.
+- **Camera Access Issues**: If the webcam isn’t accessible, ensure that no other application is using the camera.
+- **Face/Eye Detection Issues**: Verify that the Haar Cascade XML files are in the correct directory.
+
+## License
+
+This project is licensed under the MIT License.
