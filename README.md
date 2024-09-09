@@ -1,4 +1,4 @@
-# Flask Face Recognition App
+# Flask Face and eye Detection App
 
 This is a Flask web application that streams video from a webcam and detects faces and eyes in real-time using OpenCV. Users can capture and save images from the video feed, and the saved images are displayed in a gallery with the option to delete them.
 
