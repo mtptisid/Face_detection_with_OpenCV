@@ -105,7 +105,9 @@ Before running the project, you will need:
 
 ## 🖼️ Screenshots
 
+<img width="1440" alt="Screenshot 2024-09-09 at 11 13 04 PM" src="https://github.com/user-attachments/assets/a84ec8f3-c76d-4a33-b18d-495cbb8bc5d5">
 
+<img width="1440" alt="Screenshot 2024-09-09 at 11 13 04 PM" src="https://github.com/user-attachments/assets/8edafc97-4f68-4b19-8978-f88177f8101e">
 
 ## Face and Eye Detection
 
